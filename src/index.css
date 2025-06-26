@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --crypto-dark: #0a0a0a;
+  --crypto-darker: #050505;
+  --crypto-green: #00ff88;
+  --crypto-red: #ff4444;
+  --crypto-yellow: #ffaa00;
+  --crypto-purple: #8b5cf6;
+  --primary-500: #3b82f6;
+  --primary-600: #2563eb;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--crypto-dark);
+  color: white;
+}
+
+/* Custom Utility Classes */
+.btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.btn-danger {
+  @apply bg-crypto-red hover:bg-crypto-red/80 text-white px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+.btn-success {
+  @apply bg-crypto-green hover:bg-crypto-green/80 text-black px-4 py-2 rounded-lg font-medium transition-colors;
+}
+
+/* Crypto-specific colors */
+.text-crypto-green {
+  color: var(--crypto-green);
+}
+
+.text-crypto-red {
+  color: var(--crypto-red);
+}
+
+.text-crypto-yellow {
+  color: var(--crypto-yellow);
+}
+
+.text-crypto-purple {
+  color: var(--crypto-purple);
+}
+
+.bg-crypto-green {
+  background-color: var(--crypto-green);
+}
+
+.bg-crypto-red {
+  background-color: var(--crypto-red);
+}
+
+.bg-crypto-yellow {
+  background-color: var(--crypto-yellow);
+}
+
+.bg-crypto-purple {
+  background-color: var(--crypto-purple);
+}
+
+.bg-crypto-dark {
+  background-color: var(--crypto-dark);
+}
+
+.bg-crypto-darker {
+  background-color: var(--crypto-darker);
+}
+
+/* Alert-specific styles */
+.alert-notification {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.alert-badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Form styles */
+input, select, textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading animation */
+.loading-spinner {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top: 2px solid var(--primary-500);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Price change indicators */
+.price-up {
+  color: var(--crypto-green);
+}
+
+.price-down {
+  color: var(--crypto-red);
+}
+
+.price-neutral {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--primary-500), var(--crypto-purple));
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, var(--crypto-green), #00cc6a);
+}
+
+.gradient-danger {
+  background: linear-gradient(135deg, var(--crypto-red), #cc0000);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .mobile-full {
+    width: 100% !important;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --crypto-dark: #000000;
+    --crypto-darker: #000000;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-crypto-dark text-white;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .price-up {
+    @apply text-crypto-green;
+  }
+  
+  .price-down {
+    @apply text-crypto-red;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+} 

@@ -1,0 +1,65 @@
+{
+  "name": "theo-doi-gia-coin",
+  "version": "1.0.0",
+  "description": "Ứng dụng theo dõi giá coin và phân tích thị trường crypto",
+  "private": true,
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.10.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.0",
+    "axios": "^1.4.0",
+    "clsx": "^2.0.0",
+    "compromise": "^14.9.0",
+    "date-fns": "^2.30.0",
+    "finnhub": "^1.2.18",
+    "lightweight-charts": "^4.2.3",
+    "lucide-react": "^0.263.0",
+    "natural": "^6.8.0",
+    "postcss": "^8.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-intersection-observer": "^9.5.2",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "5.0.1",
+    "react-virtualized": "^9.22.5",
+    "react-window": "^1.8.8",
+    "react-window-infinite-loader": "^1.0.7",
+    "recharts": "^2.7.0",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "^3.3.0",
+    "technicalindicators": "^3.1.0",
+    "typescript": "^4.9.0",
+    "zustand": "^4.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0"
+  }
+}
